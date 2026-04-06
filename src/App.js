@@ -15,7 +15,9 @@ function App() {
     setTasks([...tasks, task]);
     setTask("");
   };
-
+   const clearTasks = () => {
+   setTasks([]);
+   };
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Task Manager</h1>
@@ -26,7 +28,7 @@ function App() {
         placeholder="Enter task"
       />
       <button onClick={addTask}>Add</button>
-
+      <button onClick={clearTasks}>Clear All</button>
       <ul>
         {tasks.map((t, i) => (
           <li key={i}>{t}</li>
@@ -34,6 +36,7 @@ function App() {
       </ul>
     </div>
   );
+  
 }
 
 export default App;
